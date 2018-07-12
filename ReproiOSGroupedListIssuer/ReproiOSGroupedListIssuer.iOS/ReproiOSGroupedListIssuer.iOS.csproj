@@ -99,7 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Uno.UI">
-      <Version>1.28.1-dev.2183</Version>
+      <Version>1.31.0-dev.171</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="..\ReproiOSGroupedListIssuer.Shared\ReproiOSGroupedListIssuer.Shared.projitems" Label="Shared" Condition="Exists('..\ReproiOSGroupedListIssuer.Shared\ReproiOSGroupedListIssuer.Shared.projitems')" />
