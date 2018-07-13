@@ -7,16 +7,13 @@
     xmlns:shared="using:ReproiOSGroupedListIssuer.Shared"
     mc:Ignorable="d"
     d:DataContext="{d:DesignInstance shared:MainPageViewModel}">
-  <Page.Resources>
-    <CollectionViewSource x:Name="Books" Source="{Binding Books}" IsSourceGrouped="True" />
-  </Page.Resources>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
       <Grid.RowDefinitions>
         <RowDefinition Height="Auto"/>
         <RowDefinition Height="*"/>
       </Grid.RowDefinitions>
 		  <TextBlock Text="Repro" Margin="20" FontSize="30" />
-        <ListView Grid.Row="1" ItemsSource="{Binding BooksCvs.View}">
+        <ListView Grid.Row="1" shared:GroupedSourceBehavior.ItemsSource="{Binding Books}">
         <ListView.ItemContainerStyle>
           <Style TargetType="ListViewItem">
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
