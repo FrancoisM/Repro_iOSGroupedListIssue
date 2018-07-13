@@ -6,7 +6,7 @@ namespace ReproiOSGroupedListIssuer
     {
         public MainPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
             DataContext = new MainPageViewModel();
         }
     }

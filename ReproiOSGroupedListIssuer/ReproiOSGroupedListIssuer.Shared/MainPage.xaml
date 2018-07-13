@@ -16,7 +16,7 @@
         <RowDefinition Height="*"/>
       </Grid.RowDefinitions>
 		  <TextBlock Text="Repro" Margin="20" FontSize="30" />
-      <ListView Grid.Row="1" ItemsSource="{x:Bind Books.View, Mode=OneWay}">
+        <ListView Grid.Row="1" ItemsSource="{Binding BooksCvs.View}">
         <ListView.ItemContainerStyle>
           <Style TargetType="ListViewItem">
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -25,7 +25,7 @@
         <ListView.GroupStyle>
           <GroupStyle>
             <GroupStyle.HeaderTemplate>
-                        <DataTemplate x:DataType="shared:BookGroup">
+              <DataTemplate x:DataType="shared:BookGroup">
                   <TextBlock Text="{Binding Key}" />
               </DataTemplate>
             </GroupStyle.HeaderTemplate>

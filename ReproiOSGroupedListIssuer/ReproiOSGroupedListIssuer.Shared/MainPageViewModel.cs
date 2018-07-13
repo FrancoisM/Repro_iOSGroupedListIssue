@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using Windows.UI.Xaml.Data;
 
 namespace ReproiOSGroupedListIssuer.Shared
 {
@@ -16,8 +17,10 @@ namespace ReproiOSGroupedListIssuer.Shared
             {
                 _books = value;
                 OnPropertyChanged(nameof(Books));
+                OnPropertyChanged(nameof(BooksCvs));
             }
         }
+        public CollectionViewSource BooksCvs { get; }
 
         public MainPageViewModel()
         {
@@ -35,6 +38,12 @@ namespace ReproiOSGroupedListIssuer.Shared
                 .GroupBy(book => book.Shelve)
                 .Select(g => new BookGroup(g.Key, g))
                 .ToList();
+
+            BooksCvs = new CollectionViewSource
+            {
+                Source = Books,
+                IsSourceGrouped = true
+            };
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
